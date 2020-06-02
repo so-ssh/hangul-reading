@@ -8,7 +8,7 @@ var single = [ "g", "gg", null, "n", null, null, "d", "dd", "r", null, null, nul
 
 var initial = [ "g", "gg", "n", "d", "dd", "r", "m", "b", "bb", "s", "ss", "", "j", "jj", "ch", "k", "t", "p", "h" ];
 var medial = [ "a", "ae", "ya", "yae", "eo", "e", "yeo", "ye", "o", "wa", "wae", "oe", "yo", "u", "wo", "we", "wi", "yu", "eu", "ui", "i" ];
-var final = [ "", "k", "gg", null, "n", null, null, "d", "l", null, null, null, null, null, null, null, "m", "b", "", "s", "ss", "ng", "j", "ch", "kk", "t", "p", "h" ];
+var final = [ "", "k", "gg", null, "n", null, null, "d", "l", null, null, null, null, null, null, null, "m", "b", null, "s", "ss", "ng", "j", "ch", "kk", "t", "p", "h" ];
 
 textarea.on("keyup", function(e) {
 	if (validateInput(textarea.val())) {
