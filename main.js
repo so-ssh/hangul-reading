@@ -35,10 +35,11 @@ function getRandomInt(n, o) {
 
 function randomSyllable() {
 	if (getRandomInt(1, 10) > 5) {
+		// display a single letter instead of a syllable
 		randMedId = undefined;
 		randInitId = getRandomInt(0, 51);
 
-		while (single[randInitId] == null) {
+		while (single[randInitId] == null) { // don't pick obsolete letters
 			randInitId = getRandomInt(0, 51);
 		}
 
@@ -70,7 +71,7 @@ function toggleRoman() {
 
 function updateRoman() {
 	if (randMedId == undefined) {
-		roman.text(initial[randInitId]);
+		roman.text(single[randInitId]);
 	} else {
 		roman.text(initial[randInitId] + medial[randMedId] + final[randFinId]);
 	}
