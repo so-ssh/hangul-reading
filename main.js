@@ -41,7 +41,7 @@ function randomSyllable() {
 		while (single[randInitId] == null) {
 			randInitId = getRandomInt(0, 51);
 		}
-		
+
     	if (showRoman.is(':checked')) roman.text(single[randInitId]);
 		syllable.text(String.fromCodePoint(randInitId + 12593));
 		return;
@@ -53,10 +53,11 @@ function randomSyllable() {
 	var randInit = randInitId * 588;
     var randMed = randMedId * 28;
     if (final[randFinId] == null) randFinId = 0;
-    if (showRoman.is(':checked')) updateRoman();
     var hangulFormula = randInit + randMed + randFinId + 44032;
 
   	syllable.text(String.fromCodePoint(hangulFormula));
+
+    if (showRoman.is(':checked')) updateRoman();
 }
 
 function toggleRoman() {
@@ -68,7 +69,11 @@ function toggleRoman() {
 }
 
 function updateRoman() {
-	roman.text(initial[randInitId] + medial[randMedId] + final[randFinId]);
+	if (randMedId == undefined) {
+		roman.text(initial[randInitId]);
+	} else {
+		roman.text(initial[randInitId] + medial[randMedId] + final[randFinId]);
+	}
 }
 
 $(window).on("keydown", function(e) {
